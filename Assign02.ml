@@ -52,4 +52,19 @@ let rec count_tail n =
 (* Problem 3 Solution *)
 
 (*Non-tail recursive*)
+let rec reverse_non_tail lst =
+  match lst with
+  | [] -> []
+  | [a'] -> [a']
+  | hd :: tl -> reverse_non_tail tl @ [hd];;
+
+
+(*Tail-recursive*)
+let reverse_tail lst =
+  let rec helper lst acc =
+    match lst with
+    | [] -> acc
+    | hd :: tl -> helper tl (hd :: acc)
+  in
+  helper lst [];;
 
