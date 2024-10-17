@@ -68,3 +68,40 @@ let reverse_tail lst =
   in
   helper lst [];;
 
+
+
+(* Problem 4 Solution *)
+
+type 'a btree = 
+| Empty
+| Leaf of 'a
+| Node of 'a btree * 'a * 'a btree;;
+
+let rec count_leaves tree =
+  match tree with
+  | Empty -> 0
+  | Leaf _ -> 1
+  | Node (left, _, right) -> count_leaves left + count_leaves right;;
+
+
+
+(* Problem 5 Solution *)
+
+let rec in_order tree =
+  match tree with
+  | Empty -> []
+  | Leaf a -> [a]
+  | Node (left, a, right) -> in_order left @ [a] @ in_order right;;
+
+
+
+(* Problem 6 Solution *)
+
+let rec pre_order tree =
+  match tree with
+  | Empty -> []
+  | Leaf a -> [a]
+  | Node (left, a, right) -> [a] @ pre_order left @ pre_order right;;
+
+
+
