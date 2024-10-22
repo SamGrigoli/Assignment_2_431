@@ -103,6 +103,7 @@ let rec pre_order tree =
   | Leaf a -> [a]
   | Node (left, a, right) -> [a] @ pre_order left @ pre_order right;;
 
+
 (* Problem 7 Solution *)
 
 (λt.λu.u t t)(λx.x)t
@@ -114,6 +115,7 @@ let rec pre_order tree =
   t(λx.x)(λx.x)
   (* Conclusion *)
     (* The normal form exists if we interpret t as a variable *)
+
 
 (* Problem 8 Solution *)
 
@@ -129,6 +131,7 @@ let rec pre_order tree =
   (* Conclusion *)
     (* Each application of (λy.y y) to itself continues to produce the same structure, which means the expression does not reach a normal form.*)
 
+
 (* Problem 9 Solution *)
 
 (λx.x x)(λx.y)
@@ -138,6 +141,7 @@ let rec pre_order tree =
   y
   (* Conclusion *)
     (* Since y is a simple variable and not a function, we have reached normal *)
+
 
 (* Problem 10 Solution *)
 
@@ -153,14 +157,17 @@ let rec pre_order tree =
   (* Conclusion *)
     (* The normal form cannot be determined without further context or application *)
 
+
 (* Problem 11 Solution *)
 
 int_to_list : int -> int list
+
 
 (* Problem 12 Solution *)
 
 divisors :: Int -> [Int]
 divisors n = [d | d <- [1..n], n `mod` d == 0]
+
 
 (* Problem 13 Solution *)
 
@@ -171,6 +178,7 @@ isPrime n
 
 divisors :: Int -> [Int]
 divisors n = [d | d <- [1..n], n `mod` d == 0]
+
 
 (* Problem 14 Solution *)
 
@@ -184,6 +192,7 @@ isPrime n
 
 divisors :: Int -> [Int]
 divisors n = [d | d <- [1..n], n `mod` d == 0]
+
 
 (* Problem 15 Solution *)
 primes :: [Int]
@@ -199,6 +208,7 @@ divisors n = [d | d <- [1..n], n `mod` d == 0]
 
 main :: IO ()
 main = print (primes !! 1999)  -- Output: 17389
+
 
 (* Problem 16 Solution *) 
 
